@@ -21,17 +21,10 @@ dwf.FDwfAnalogImpedanceReferenceSet(hdwf, c_double(reference))
 # 보정 초기화
 dwf.FDwfAnalogImpedanceCompReset(hdwf)
 
-# Open 보정
+# 보정 수행행
 print("DUT를 분리하고 Enter를 누르세요...")
 input()
-dwf.FDwfAnalogImpedanceCompReset(hdwf)  # Open 보정 초기화
-dwf.FDwfAnalogImpedanceCompSet(hdwf, c_double(0), c_double(0), c_double(0), c_double(0))  # Open 보정 수행
-
-# Short 보정
-print("DUT를 단락시키고 Enter를 누르세요...")
-input()
-dwf.FDwfAnalogImpedanceCompReset(hdwf)  # Short 보정 초기화
-dwf.FDwfAnalogImpedanceCompSet(hdwf, c_double(0), c_double(0), c_double(0), c_double(0))  # Short 보정 수행
+dwf.FDwfAnalogImpedanceCompSet(hdwf, c_double(reference), c_double(0), c_double(0), c_double(0))
 
 # 보정 데이터 저장
 open_resistance = c_double()
