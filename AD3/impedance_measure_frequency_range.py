@@ -53,7 +53,7 @@ print("기준 저항: {} Ω, 주파수 범위: {} Hz ~ {} kHz (nanofarad 커패�
 
 # 임피던스 측정 초기화 및 설정
 dwf.FDwfAnalogImpedanceReset(hdwf)
-dwf.FDwfAnalogImpedanceModeSet(hdwf, c_int(8)) 
+dwf.FDwfAnalogImpedanceModeSet(hdwf, c_int(0)) 
 dwf.FDwfAnalogImpedanceReferenceSet(hdwf, c_double(reference))
 dwf.FDwfAnalogImpedanceFrequencySet(hdwf, c_double(start_freq))
 dwf.FDwfAnalogImpedanceAmplitudeSet(hdwf, c_double(1))  # 1V 진폭 (2V 피크 투 피크)
